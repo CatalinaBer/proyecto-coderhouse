@@ -1,0 +1,11 @@
+{% extends "estudio/base.html" %}
+
+{% block contenido %}
+<h2>Nuevo Servicio</h2>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Guardar Servicio</button>
+</form>
+{% endblock %}
