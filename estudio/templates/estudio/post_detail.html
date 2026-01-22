@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block contenido %}
+<h2>{{ post.titulo }}</h2>
+<h4>{{ post.subtitulo }}</h4>
+<p>{{ post.fecha }}</p>
+
+{% if post.imagen %}
+<img src="{{ post.imagen.url }}" width="400">
+{% endif %}
+
+<div>
+    {{ post.contenido|safe }}
+</div>
+
+{% endblock %}

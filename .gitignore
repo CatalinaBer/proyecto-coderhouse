@@ -1,4 +1,4 @@
-# Entorno virtual
+# Entornos virtuales
 mientorno/
 venv/
 env/
@@ -6,9 +6,13 @@ env/
 # Base de datos
 db.sqlite3
 
-# Cache de Python
+# Python cache
 _pycache_/
 *.pyc
+
+# Media (uploads de usuarios)
+media/
+posts/
 
 # Variables de entorno
 .env
@@ -16,6 +20,3 @@ _pycache_/
 # Archivos del sistema
 .DS_Store
 Thumbs.db
-
-# Migraciones (opcional)
-# */migrations/

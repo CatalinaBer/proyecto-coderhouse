@@ -1,0 +1,13 @@
+{% extends "estudio/base.html" %}
+
+{% block contenido %}
+<h2>Home</h2>
+
+{% for post in posts %}
+<h3>{{ post.titulo }}</h3>
+<p>{{ post.subtitulo }}</p>
+{% empty %}
+<p>No hay páginas aún</p>
+{% endfor %}
+
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends "estudio/base.html" %}
+
+{% block contenido %}
+<h2>Eliminar Post</h2>
+
+<p>¿Estás segura de que querés eliminar este post?</p>
+
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Sí, eliminar</button>
+    <a href="{% url 'pages' %}">Cancelar</a>
+</form>
+{% endblock %}

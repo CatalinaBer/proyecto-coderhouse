@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block contenido %}
+
+<h2>Enviar mensaje</h2>
+
+<form method="post">
+    {% csrf_token %}
+
+    <label>Destinatario:</label><br>
+    <select name="destinatario" required>
+        <option value="">Seleccionar usuario</option>
+        {% for usuario in usuarios %}
+        <option value="{{ usuario.id }}">
+            {{ usuario.username }}
+        </option>
+        {% endfor %}
+    </select>
+
+    <br><br>
+
+    <label>Mensaje:</label><br>
+    <textarea name="contenido" rows="4" required></textarea>
+
+    <br><br>
+
+    <button type="submit">Enviar</button>
+</form>
+
+{% endblock %}

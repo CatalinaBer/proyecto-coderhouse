@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block contenido %}
+
+<h2>Bandeja de entrada</h2>
+
+<a href="/mensajes/enviar/">Enviar mensaje</a>
+
+<hr>
+
+{% if mensajes %}
+<ul>
+    {% for mensaje in mensajes %}
+    <li>
+        <strong>{{ mensaje.remitente.username }}</strong>:
+        {{ mensaje.contenido }}
+    </li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>No tenés mensajes.</p>
+{% endif %}
+
+{% endblock %}
