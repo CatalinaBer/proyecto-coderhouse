@@ -29,3 +29,23 @@ def signup_view(request):
     else:
         form = UserCreationForm()
     return render(request, "accounts/signup.html", {"form": form})
+
+from django.contrib.auth.decorators import login_required
+from .models import Profile
+from .forms import ProfileForm
+
+@login_required
+def profile(request):
+    profile, created = Profile.objects.get_or_create(user=request.user)
+
+    form = ProfileForm(
+        request.POST or None,
+        request.FILES or None,
+        instance=profile
+    )
+
+    if form.is_valid():
+        form.save()
+        return redirect("profile")
+
+    return render(request, "accounts/profile.html", {"form": form})
